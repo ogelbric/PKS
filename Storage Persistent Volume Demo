@@ -1,0 +1,20 @@
+kubectl create -f storage.yaml
+kubectl get storageclass
+
+kubectl create -f mongodb.yaml
+kubectl create -f mongodb-rep3.yaml
+kubectl get ns
+
+kubectl config set-context chevy --namespace acme-air2
+
+kubectl get storageclass
+kubectl get storageclass -o json
+kubectl get pv
+kubectl get pvc
+kubectl describe pvc
+kubectl get pods -o wide
+kubectl get nodes -o wide
+
+kubectl delete ns acme-air2
+kubectl delete  storageclass pks-default
+
