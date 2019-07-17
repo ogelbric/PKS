@@ -1,8 +1,12 @@
+git clone https://github.com/ogelbric/PKS
+cd PKS
+
+
 kubectl create -f storage.yaml
 kubectl get storageclass
 
-kubectl create -f mongodb.yaml
-kubectl create -f mongodb-rep3.yaml
+Option1: kubectl create -f mongodb.yaml
+Option2: kubectl create -f mongodb-rep3.yaml
 kubectl get ns
 
 kubectl config set-context chevy --namespace acme-air2
