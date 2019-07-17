@@ -1,6 +1,13 @@
 git clone https://github.com/ogelbric/PKS
 cd PKS
 
+CLuster 2 (ssh root@10.197.96.7 )
+
+pks login -a orfpksapi2.lab.local -u admin --ca-cert /tmp/admincert -p AlaBmczopIUmSL_7dIXAom7Ay7aETTxq
+pks clusters
+pks get-credentials chevy
+
+
 
 kubectl create -f storage.yaml
 kubectl get storageclass
