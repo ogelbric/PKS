@@ -15,13 +15,16 @@ User: admin
 <B>Take a look at just how many clusters do I have….</B>
 
 root@orfpks2 [ ~ ]# pks clusters
- 
+
 Name   Plan Name  UUID                                  Status     Action
+
 chevy  Small      866dfb27-6444-4bf1-8fbe-e2bf91eae018  succeeded  CREATE
  
 root@orfpks2 [ ~ ]# ls -ltr .kube/config
 -rw------- 1 root root 11067 Jul 23 13:07 .kube/config
+
 root@orfpks2 [ ~ ]# cp .kube/config .kube/config.bak
+
 root@orfpks2 [ ~ ]# rm .kube/config
  
 
