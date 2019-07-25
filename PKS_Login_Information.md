@@ -1,12 +1,12 @@
 
 The question was posed to be as such: 
-
+<hr>
 With Enterprise PKS how do we get the credentials for individual K8 clusters and provide them to developers who want to operate directly with K8 clusters?
 
 
 I repleid with the following: 
-
-<hr>I log into PKS<\hr>
+<hr>
+#Log into PKS
  
  
 root@orfpks2 [ ~ ]# pks login -a orfpksapi2.lab.local -u admin --ca-cert /tmp/admincert -p AlaBmczopIUmSL_7dIXAom7Ay7aETTxq
@@ -15,7 +15,7 @@ API Endpoint: orfpksapi2.lab.local
 User: admin
  
 
-Take a look at just how many clusters do I have….
+#Take a look at just how many clusters do I have….
 
 root@orfpks2 [ ~ ]# pks clusters
  
@@ -28,8 +28,8 @@ root@orfpks2 [ ~ ]# cp .kube/config .kube/config.bak
 root@orfpks2 [ ~ ]# rm .kube/config
  
 
-For giggles I delete my kube config file on the machine I loogged in from…
-And get my credentials
+#For giggles I delete my kube config file on the machine I loogged in from…
+#And get my credentials
  
 root@orfpks2 [ ~ ]# pks get-credentials chevy
  
@@ -44,15 +44,15 @@ root@orfpks2 [ ~ ]# ls -ltr .kube/config
 -rw------- 1 root root 2767 Jul 24 11:29 .kube/config
 
  
-Now I have a brand new kube config file. Which can be sent to the developer. In my case I pasted it to my mac and fixed up (Mac cant see DNS server in lab) the line
+#Now I have a brand new kube config file. Which can be sent to the developer. In my case I pasted it to my mac and fixed up (Mac cant see DNS server in lab) the line
 
-     server: https://chevy.lab.local:8443
+     '''server: https://chevy.lab.local:8443'''
 with
-     server: https://10.197.104.145:8443
+     '''server: https://10.197.104.145:8443'''
  
  
  
-root@orfpks2 [ ~ ]# cat  .kube/config
+#root@orfpks2 [ ~ ]# cat  .kube/config
 
 apiVersion: v1
 clusters:
@@ -75,7 +75,7 @@ users:
 root@orfpks2 [ ~ ]# 
  
  
-From my MAC this works now:
+#From my MAC this works now:
  
 ogelbrich-a01:~ ogelbrich$ kubectl get nodes
 NAME                                   STATUS    ROLES     AGE       VERSION
@@ -85,7 +85,7 @@ bfb5660e-51e7-454a-ae8f-6a949cf2e76b   Ready     <none>    8d        v1.13.5
 ogelbrich-a01:~ ogelbrich$ 
  
  
-Then I can get the Kubernetes Load balancer (if set up on system)
+#Then I can get the Kubernetes Load balancer (if set up on system)
  
 ogelbrich-a01:~ ogelbrich$ kubectl config set-context chevy --namespace kube-system
 Context "chevy" modified.
@@ -101,7 +101,7 @@ LoadBalancer Ingress:     10.197.104.148, 100.64.64.15
 ogelbrich-a01:~ ogelbrich$ 
  
  
-When you in a browser go to
+#In a browser go to
  
 https: //10.197.104.148
  
@@ -109,7 +109,7 @@ and use the token from the .kube/config file  (Last line)
  
 eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6IjcyNTNlMjI0LWM1MzUtNDE0Ni05NTI0LTI4ODUxNjA4OWRhNy10b2tlbi1zazl0aiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiI3MjUzZTIyNC1jNTM1LTQxNDYtOTUyNC0yODg1MTYwODlkYTciLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIzZjUxMzU0OS1hZTA2LTExZTktOGI1OS0wMDUwNTY4ZDliZjYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDo3MjUzZTIyNC1jNTM1LTQxNDYtOTUyNC0yODg1MTYwODlkYTcifQ.psSdRbjHrKiKCjKCrNeya176XSL3MaloNsv_J1JHCOCpyk7xg6T300xnuSAtDmiNtgZeu6ORx5ee9zD-nGB7E0bgVx8aMYKr5I2CkAkR9VKbyEciDLHZwJ8U6CHSOy62bnAFVjT10uu-ch3AsX_4VDXb9Q_6vShfaTfmi95NLxHgUvWHciq1-ZQFMMoYctvTsWj_jHBuf_jh_v1lyo73tDK2HGqwiY0lwt_goFBA3jJWkGnWWpZxW2MRWCCzY0zzl2BDnOsnMAbvaT194PmHjqc3vjxzpMqvptnRRdI4s1YLa5gfauTOYWWlWMgiX2cQFCMta8ALcNZgWFXNOgSR8g
  
-You end up here…
+#You end up here…
  
 Login screen with token:
 
