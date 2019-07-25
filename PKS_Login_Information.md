@@ -1,12 +1,9 @@
 
-The question was posed to be as such: 
-<hr>
 With Enterprise PKS how do we get the credentials for individual K8 clusters and provide them to developers who want to operate directly with K8 clusters?
-
-
-I repleid with the following: 
 <hr>
-#Log into PKS
+
+
+<B>Log into PKS<\B>
  
  
 root@orfpks2 [ ~ ]# pks login -a orfpksapi2.lab.local -u admin --ca-cert /tmp/admincert -p AlaBmczopIUmSL_7dIXAom7Ay7aETTxq
