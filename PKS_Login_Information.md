@@ -53,7 +53,7 @@ with
      server: https://10.197.104.145:8443
  
  
- 10.197.104.145
+
  
 <B>root@orfpks2 [ ~ ]# cat  .kube/config</B>
 
@@ -106,7 +106,7 @@ ogelbrich-a01:~ ogelbrich$
  
 <B>In a browser go to the ingress K8 Dashboard</B>
  
-https: //10.197.104.148
+     https://10.197.104.148
  
 and use the token from the .kube/config file  (Last line)
  
