@@ -14,8 +14,8 @@ root@orfpks2 [ ~ ]# pks login -a orfpksapi2.lab.local -u admin --ca-cert /tmp/ad
 API Endpoint: orfpksapi2.lab.local
 User: admin
  
+
 Take a look at just how many clusters do I have….
- 
 
 root@orfpks2 [ ~ ]# pks clusters
  
@@ -27,23 +27,25 @@ root@orfpks2 [ ~ ]# ls -ltr .kube/config
 root@orfpks2 [ ~ ]# cp .kube/config .kube/config.bak
 root@orfpks2 [ ~ ]# rm .kube/config
  
+
 For giggles I delete my kube config file on the machine I loogged in from…
 And get my credentials
  
 root@orfpks2 [ ~ ]# pks get-credentials chevy
  
+
 Fetching credentials for cluster chevy.
 Context set for cluster chevy.
  
 You can now switch between clusters by using:
 $kubectl config use-context <cluster-name>
+
 root@orfpks2 [ ~ ]# ls -ltr .kube/config
 -rw------- 1 root root 2767 Jul 24 11:29 .kube/config
-root@orfpks2 [ ~ ]# cat ls -ltr .kube/config
-cat: invalid option -- 'l'
-Try 'cat --help' for more information.
+
  
 Now I have a brand new kube config file. Which can be sent to the developer. In my case I pasted it to my mac and fixed up (Mac cant see DNS server in lab) the line
+
      server: https://chevy.lab.local:8443
 with
      server: https://10.197.104.145:8443
@@ -51,6 +53,7 @@ with
  
  
 root@orfpks2 [ ~ ]# cat  .kube/config
+
 apiVersion: v1
 clusters:
 - cluster:
@@ -72,7 +75,7 @@ users:
 root@orfpks2 [ ~ ]# 
  
  
-From my mac this works now:
+From my MAC this works now:
  
 ogelbrich-a01:~ ogelbrich$ kubectl get nodes
 NAME                                   STATUS    ROLES     AGE       VERSION
