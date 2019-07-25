@@ -6,7 +6,7 @@ With Enterprise PKS how do we get the credentials for individual K8 clusters and
 
 I repleid with the following: 
 
-I log into PKS…..
+<hr>I log into PKS<\hr>
  
  
 root@orfpks2 [ ~ ]# pks login -a orfpksapi2.lab.local -u admin --ca-cert /tmp/admincert -p AlaBmczopIUmSL_7dIXAom7Ay7aETTxq
