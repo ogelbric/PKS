@@ -46,11 +46,14 @@ root@orfpks2 [ ~ ]# ls -ltr .kube/config
  
 <B>Now I have a brand new kube config file. Which can be sent to the developer. In my case I pasted it to my mac and fixed up (Mac cant see DNS server in lab) the line</B>
 
-     <a>server: https://chevy.lab.local:8443</a>
+     server: https://chevy.lab.local:8443
+
 with
-     <a>server: https://10.197.104.145:8443</a>
+
+     server: https://10.197.104.145:8443
  
  
+ 10.197.104.145
  
 <B>root@orfpks2 [ ~ ]# cat  .kube/config</B>
 
