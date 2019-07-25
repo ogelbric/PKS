@@ -116,4 +116,8 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiw
  
 Login screen with token:
 
+<img src="k8login.png" alt="K8 Login Question">
 
+<B>Kubernetes dashboard</B>
+
+<img src="k8loginresult.png" alt="K8 Dashboard">
